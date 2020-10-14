@@ -5,7 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var MongoClient = require('mongodb').MongoClient;
+const MongoClient = require('mongodb').MongoClient;
 var mongoose = require('mongoose');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
@@ -13,8 +13,9 @@ var LocalStrategy = require('passport-local').Strategy;
 
 var config = require('./config');
 /*
+
 const MongoClient = require('mongodb').MongoClient;
-const uri = "mongodb+srv://toto:nesyA0NQxy6XpfHo@cluster0.sovej.mongodb.net/recipeslv?retryWrites=true&w=majority";
+const uri = "mongodb+srv://toto:<password>@cluster0.sovej.mongodb.net/<dbname>?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true });
 client.connect(err => {
   const collection = client.db("test").collection("devices");
@@ -22,8 +23,9 @@ client.connect(err => {
   client.close();
 });
 */
+
 // Connection URL
-mongoose.connect(config.mongoUrl,{ useNewUrlParser: true } );
+mongoose.connect(config.mongoUrl,{useMongoClient: true,});
 
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
