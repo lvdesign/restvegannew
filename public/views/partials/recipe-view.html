@@ -1,0 +1,41 @@
+<div class="container" >
+        
+        <div class="row" >
+            
+            <div class="col-xs-12 ">
+
+            <table class="table recipetable table-condensed table-hover">
+                <tr>
+                    <td><h3>Details for {{recipe.title}}</h3></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Recipe Title</td>
+                    <td>{{recipe.title}}</td>
+                </tr>
+                <tr>
+                    <td>Summary</td>
+                    <td>{{recipe.summary}}</td>
+                </tr>
+                <tr>
+                    <td>Author</td>
+                    <td>{{recipe.author}}</td>
+                </tr>
+                <tr>
+                    <td>Date</td>
+                    <td>{{recipe.createdAt}}</td>
+                </tr>
+                
+            </table>
+            
+            <div>
+                <a class="btn btn-primary" ui-sref="app.editRecipe({id:recipe._id})">Edit</a>
+            </div>
+
+            </div><!--endColxs12-->
+
+            <div class="col-xs-12"><p style="padding:3em;"></p></div><!--endColxs12-->
+
+        </div><!--endRow-->
+
+</div><!--endCont-->

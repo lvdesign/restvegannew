@@ -1,0 +1,112 @@
+
+<div class="form-group" ng-class="{ 'has-error' : recipeForm.author.$error.required && !recipeForm.author.$pristine }">
+                    <label for="author" class="col-sm-2 control-label">Your username</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="author" name="author" placeholder="Enter Your Name" ng-model="recipe.author" required>
+                    </div>
+                    <span ng-show="editRecipeForm.author.$error.required && !editRecipeForm.author.$pristine" class="help-block">Your Name is required.</span>
+                </div>
+                <!-- date  timestamp-->
+
+                <!-- title -->
+                <div class="form-group" ng-class="{ 'has-error' : recipeForm.title.$error.required && !recipeForm.title.$pristine }">
+                    <label for="title" class="col-sm-2 control-label">Your Title</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="title" name="title" placeholder="Enter Your title" ng-model="recipe.title" required>
+                    </div>
+                   <span ng-show="recipeForm.title.$error.required && !recipeForm.title.$pristine" class="help-block">A title is required.</span>
+
+                </div>
+                
+        
+                <!-- category -->
+                <div class="form-group" ng-class="{ 'has-error' : recipeForm.category.$error.required && !recipeForm.category.$pristine }">
+                    <label for="category" class="col-sm-2 control-label">Your Category</label>
+                    <div class="col-sm-10">
+                        <label for="category" class="radio-inline" >
+                            <input type="radio" ng-model="recipe.category" name="category" id="appetizer" value="appetizer" />Appetizer
+                        </label>
+                         <label for="category" class="radio-inline" >
+                            <input type="radio" ng-model="recipe.category" name="category" id="mains" value="mains" />Mains
+                        </label>
+                        <label for="category" class="radio-inline" >
+                            <input type="radio" ng-model="recipe.category" name="category" id="dessert" value="desserts" />Desserts
+                        </label>
+                        <label for="category" class="radio-inline" >
+                            <input type="radio" ng-model="recipe.category" name="category" id="drinks" value="drinks" />Drinks
+                        </label>
+                    </div>
+                    <span ng-show="recipeForm.category.$error.required && !recipeForm.category.$pristine" class="help-block">A Category is required.</span>
+
+                </div>
+
+                <!-- summary -->
+                <div class="form-group" ng-class="{ 'has-error' :recipeForm.summary.$error.required && !recipeForm.summary.$pristine }">
+                    <label for="summary" class="col-sm-2 control-label">Your Summary</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="summary" name="summary" placeholder="Enter Your summary" ng-model="recipe.summary" required>
+                    </div>
+                    <span ng-show="recipeForm.summary.$error.required && !recipeForm.summary.$pristine" class="help-block">A Summary is required.</span>
+                </div>
+
+                <!-- preparation time -->
+                <div class="form-group" ng-class="{ 'has-error' : recipeForm.preparationtime.$error.required && !recipeForm.preparationtime.$pristine }">
+                    <label for="preparationtime" class="col-sm-2 control-label">Preparation Time</label>
+                    <div class="col-sm-10">
+                        <input type="text" id="preparationtime" name="preparationtime" class="form-control" ng-model="recipe.preparationtime">
+                    </div>
+                    <span ng-show="recipeForm.preparationtime.$error.required && !recipeForm.preparationtime.$pristine" class="help-block">A Preparation time is required.</span>
+
+                </div>
+
+                <!-- cooking time -->
+                <div class="form-group" ng-class="{ 'has-error' : recipeForm.cookingtime.$error.required && !recipeForm.cookingtime.$pristine }">
+                    <label for="cookingtime" class="col-sm-2 control-label">Cooking Time</label>
+                    <div class="col-sm-10">
+                        <input type="text" id="cookingtime" name="cookingtime" class="form-control" ng-model="recipe.cookingtime" >
+                    </div>
+                    <span ng-show="recipeForm.cookingtime.$error.required && !recipeForm.cookingtime.$pristine" class="help-block">A Cooking time is required.</span>
+
+                </div>
+
+                <!-- ingredients -->
+                <div class="form-group"  ng-class="{ 'has-error' :   recipeForm.ingredients.$error.required  && !recipeForm.ingredients.$pristine}">
+                    <label for="ingredients" class="col-sm-2 control-label">Your Ingredients</label>
+                    <div class="col-sm-10">
+                        <textarea class="form-control" id="ingredients" name="ingredients" rows="5" ng-model="recipe.ingredients"> </textarea>
+                    </div>
+                    <span ng-show="recipeForm.ingredients.$error.required && !recipeForm.ingredients.$pristine" class="help-block">Ingredients are required.</span>
+
+                </div>
+                <!-- method -->
+                <div class="form-group" ng-class="{ 'has-error' : recipeForm.method.$error.required  && !recipeForm.method.$pristine}">
+                    <label for="method" class="col-sm-2 control-label">Your Method</label>
+                    <div class="col-sm-10">
+                        <textarea class="form-control" id="method" name="method" rows="5" ng-model="recipe.method">  </textarea>
+                    </div>
+                    <span ng-show="recipeForm.method.$error.required && !recipeForm.method.$pristine" class="help-block">Method is required.</span>
+
+                </div>
+                <!-- tips -->
+                <div class="form-group" ng-class="{ 'has-error' :   recipeForm.tips.$error.required  && !recipeForm.tips.$pristine}">
+                    <label for="tips" class="col-sm-2 control-label">Your Tips</label>
+                    <div class="col-sm-10">
+                        <textarea class="form-control" id="tips" name="tips" rows="5" ng-model="recipe.tips"> </textarea>
+                    </div>
+                    <span ng-show="recipeForm.tips.$error.required && !recipeForm.tips.$pristine" class="help-block">Tips is required.</span>
+
+                </div>
+                <!-- -->
+                <div class="form-group">
+                    <label for="checkbox-inline" class="col-sm-2 control-label">Featured</label>
+                    <div class="col-sm-10">
+                        <input type="checkbox" name="approve" value="" ng-model="recipe.featured">
+                        <strong>This recipe featured ?</strong>
+                    </div>
+                </div>
+                <!-- Submit -->
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-primary" ng-disabled="recipeForm.$invalid" value="Save">Send Recipe</button>
+                    </div>
+                </div>

@@ -1,0 +1,141 @@
+<div class="container" ng-controller="EditRecipeController">
+
+    <div class="row">
+        
+        <div class="col-xs-12">
+            <ul class="breadcrumb">
+                <li><a href="partials/recipe.html">Recipes List</a></li>
+                <li>Edit recipe</li>
+            </ul>
+        </div>
+
+        <h2>Add a recipe :</h2>
+
+        <div class="col-xs-6 col-lg-6">
+            <h4>Editing your recipe :</h4>
+
+            <form class="form-horizontal" name="editRecipeForm" ng-submit="submitRecipe()" novalidate>
+                <!-- author  with id user-->
+                <div class="form-group" ng-class="{ 'has-error' : editRecipeForm.author.$error.required && !editRecipeForm.author.$pristine }">
+                    <label for="author" class="col-sm-2 control-label">Your username</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="author" name="author" placeholder="Enter Your Name" ng-model="myeditrecipe.author" required>
+                    </div>
+                    <span ng-show="editRecipeForm.author.$error.required && !editRecipeForm.author.$pristine" class="help-block">Your Name is required.</span>
+                </div>
+                <!-- date  timestamp-->
+
+                <!-- title -->
+                <div class="form-group" ng-class="{ 'has-error' : editRecipeForm.title.$error.required && !editRecipeForm.title.$pristine }">
+                    <label for="title" class="col-sm-2 control-label">Your Title</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="title" name="title" placeholder="Enter Your title" ng-model="myeditrecipe.title" required>
+                    </div>
+                   <span ng-show="editRecipeForm.title.$error.required && !editRecipeForm.title.$pristine" class="help-block">A title is required.</span>
+
+                </div>
+                               
+                <!-- category -->
+                <div class="form-group" ng-class="{ 'has-error' : editRecipeForm.category.$error.required && !editRecipeForm.category.$pristine }">
+                    <label for="category" class="col-sm-2 control-label">Your Category</label>
+                    <div class="col-sm-10">
+                        <label for="category" class="radio-inline" ng-repeat="category in categories">
+                            <input type="radio" ng-model="myeditrecipe.category" name="category" id="{{category.value}}" value="{{category.value}}" />{{ category.value }}
+                            </label>
+                    </div>
+                    <span ng-show="editRecipeForm.category.$error.required && !editRecipeForm.category.$pristine" class="help-block">A Category is required.</span>
+
+                </div>
+
+                <!-- summary -->
+                <div class="form-group" ng-class="{ 'has-error' : editRecipeForm.summary.$error.required && !editRecipeForm.summary.$pristine }">
+                    <label for="summary" class="col-sm-2 control-label">Your Summary</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="summary" name="summary" placeholder="Enter Your summary" ng-model="myeditrecipe.summary" required>
+                    </div>
+                    <span ng-show="editRecipeForm.summary.$error.required && !editRecipeForm.summary.$pristine" class="help-block">A Summary is required.</span>
+                </div>
+
+                <!-- preparation time -->
+                <div class="form-group" ng-class="{ 'has-error' : editRecipeForm.preparationtime.$error.required && !editRecipeForm.preparationtime.$pristine }">
+                    <label for="preparationtime" class="col-sm-2 control-label">Preparation Time</label>
+                    <div class="col-sm-10">
+                        <input type="text" id="preparationtime" name="preparationtime" class="form-control" ng-model="myeditrecipe.preparationtime">
+                    </div>
+                    <span ng-show="editRecipeForm.preparationtime.$error.required && !editRecipeForm.preparationtime.$pristine" class="help-block">A Preparation time is required.</span>
+
+                </div>
+
+                <!-- cooking time -->
+                <div class="form-group" ng-class="{ 'has-error' : editRecipeForm.cookingtime.$error.required && !editRecipeForm.cookingtime.$pristine }">
+                    <label for="cookingtime" class="col-sm-2 control-label">Cooking Time</label>
+                    <div class="col-sm-10">
+                        <input type="text" id="cookingtime" name="cookingtime" class="form-control" ng-model="myeditrecipe.cookingtime" >
+                    </div>
+                    <span ng-show="editRecipeForm.cookingtime.$error.required && !editRecipeForm.cookingtime.$pristine" class="help-block">A Cooking time is required.</span>
+
+                </div>
+
+                <!-- ingredients -->
+                <div class="form-group"  ng-class="{ 'has-error' :   editRecipeForm.ingredients.$error.required  && !commentForm.ingredients.$pristine}">
+                    <label for="ingredients" class="col-sm-2 control-label">Your Ingredients</label>
+                    <div class="col-sm-10">
+                        <textarea class="form-control" id="ingredients" name="ingredients" rows="5" ng-model="myeditrecipe.ingredients"> </textarea>
+                    </div>
+                    <span ng-show="editRecipeForm.ingredients.$error.required && !editRecipeForm.ingredients.$pristine" class="help-block">Ingredients are required.</span>
+
+                </div>
+                <!-- method -->
+                <div class="form-group" ng-class="{ 'has-error' :   editRecipeForm.method.$error.required  && !commentForm.method.$pristine}">
+                    <label for="method" class="col-sm-2 control-label">Your Method</label>
+                    <div class="col-sm-10">
+                        <textarea class="form-control" id="method" name="method" rows="5" ng-model="myeditrecipe.method">  </textarea>
+                    </div>
+                    <span ng-show="editRecipeForm.method.$error.required && !editRecipeForm.method.$pristine" class="help-block">Method is required.</span>
+
+                </div>
+                <!-- tips -->
+                <div class="form-group" ng-class="{ 'has-error' :   editRecipeForm.tips.$error.required  && !commentForm.tips.$pristine}">
+                    <label for="tips" class="col-sm-2 control-label">Your Tips</label>
+                    <div class="col-sm-10">
+                        <textarea class="form-control" id="tips" name="tips" rows="5" ng-model="myeditrecipe.tips"> </textarea>
+                    </div>
+                    <span ng-show="editRecipeForm.tips.$error.required && !editRecipeForm.tips.$pristine" class="help-block">Tips is required.</span>
+
+                </div>
+                <!-- -->
+                <div class="form-group">
+                    <label for="checkbox-inline" class="col-sm-2 control-label">Featured</label>
+                    <div class="col-sm-10">
+                        <input type="checkbox" name="approve" value="" ng-model="myeditrecipe.featured">
+                        <strong>This recipe featured ?</strong>
+                    </div>
+                </div>
+                <!-- Submit -->
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-primary" ng-disabled="editRecipeForm.$invalid">Send Recipe</button>
+                    </div>
+                </div>
+            </form>
+        </div><!--/.col-xs-6.col-lg-6-->zzz
+        
+        <div class="col-xs-6 col-lg-6" >
+
+            <h2>Your recipe : </h2>
+            <p>My title : {{myeditrecipe.title }}</p>
+            <p>My name : {{myeditrecipe.author }}</p>
+            <p>My picture : {{ myeditrecipe.file }}</p>
+            <p>My category : {{myeditrecipe.category }}</p>          
+            <p>My summary : {{myeditrecipe.summary}}</p>
+            <p>My preparationtime : {{myeditrecipe.preparationtime}}</p>
+            <p>My cookingtime : {{myeditrecipe.cookingtime }}</p>
+            <p>My ingredients : {{myeditrecipe.ingredients}}</p>
+            <p>My method : {{myeditrecipe.method }}</p>
+            <p>My tips : {{myeditrecipe.tips }}</p>
+        </div><!--/.col-xs-6.col-lg-6-->
+
+        <div class="col-xs-12"><p style="padding:2em;"></p></div><!--/.col-xs-6.col-lg-6-->
+    
+    </div><!--/row-->
+</div>

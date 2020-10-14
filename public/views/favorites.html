@@ -1,0 +1,66 @@
+<div class="container" >
+        
+
+        <div class="row">
+            
+            <div class="col-xs-12">
+               <ul class="breadcrumb">
+                   <li><a href="index.html">Home</a></li>
+                   <li class"active">Favorites</li>
+               </ul>
+            </div><!--end class="col-xs-12" -->
+            
+            
+            <div class="col-xs-12" ng-if="!showMenu">
+            <h3>{{message}}</h3>
+            </div><!--end class="col-xs-12" -->
+                                
+            <div class="col-xs-12" ng-if="showMenu">
+                <button ng-click="toggleDelete()" class="btn btn-xs btn-default pull-right"
+                    type="button">  {{showDelete ? 'Hide Delete Button':'Show Delete Button'}}
+                </button>
+
+                <div class="row">
+
+                    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3">
+                        <ul class="list-unstyled list-inline">
+                            <li role="presentation" ng-class="{active:isSelected(1)}">
+                                <a ng-click="select(1)" aria-controls="all menu"><span class="badge badgeLV">All Recipes</span><span> [ {{recipes.length}} ]</span></a></li>
+                            <li role="presentation" ng-class="{active:isSelected(2)}">
+                                <a ng-click="select(2)" aria-controls="appetizers"><span class="badge badgeLV">Appetizers</a><span>{{ (recipes.appetizers).length}}</span></li>
+                            <li role="presentation" ng-class="{active:isSelected(3)}">
+                                <a ng-click="select(3)" aria-controls="mains"><span class="badge badgeLV">Mains</span></a><span></span></li>
+                            <li role="presentation" ng-class="{active:isSelected(4)}">
+                                <a ng-click="select(4)" aria-controls="desserts" ><span class="badge badgeLV">Desserts</a><span></span></li>
+                            <li role="presentation" ng-class="{active:isSelected(5)}">
+                                <a ng-click="select(5)" aria-controls="drinks" ><span class="badge badgeLV">Drinks</a><span></span></li>
+                        </ul>
+                    </div>    
+                
+
+                    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3" ng-repeat="recipe in recipes | filter:filtText ">            
+                            
+                                <div class="thumbnail">
+                                        <a ui-sref="app.recipesdetails({id:recipe._id})"><!-- ref id  avant _id-->
+                                        <img class="img-responsive center-block" ng-src={{recipe.image}} alt={{recipe.name}}></a>
+                                        <div class="caption text-center">
+                                            <a ui-sref="app.recipesdetails({id:recipe._id})"><h4>{{recipe.title}}</h4></a>
+                                            <p>{{recipe.summary}}</p>  
+                                        </div>
+
+                    <button  ng-show="showDelete" ng-click="deleteFavorite(recipe._id)" class="btn btn-xs btn-danger pull-right"  type="button">
+                          <i class="fa fa-star-o"></i>
+                        </button>
+
+                                </div>
+                    </div><!--endcol12 -->
+                
+                </div><!--endRow" -->
+
+
+            </div><!--end class="col-xs-12" -->
+            
+            <div class="col-xs-12"><p style="padding:2em;"></p></div>
+
+        </div><!--end row  -->
+</div><!--end Cont -->

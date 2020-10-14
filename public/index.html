@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="originrecipApp" ng-strict-di>
+<!-- http://www.codelord.net/2017/06/25/prevent-angularjs-injection-errors-with-strict-mode/  -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="Vegan recipes : We take inspiration from the World's best cuisine's Vegan recipes">
+    <meta name="author" content="LVdesign">
+    <link rel="icon" href="images/iconvegan.png">
+    <meta name="twitter:card" content="Vegan recipes : We take inspiration from the World's best cuisine's Vegan recipes" />
+    <meta name="twitter:site" content="@vegan_recette" />
+    <meta name="twitter:creator" content="@lvdesign" />
+    <meta property="og:url" content="https://veganrecipe.herokuapp.com/" />
+    <meta property="og:title" content="Vegan recipes" />
+    <meta property="og:description" content="We take inspiration from the World's best cuisine's Vegan recipes" />
+
+
+    <title>Originals Vegan Recipes</title>
+
+    <!-- Bootstrap core CSS -->
+
+    <link rel="stylesheet" href="styles/main-041319410e.css"/>
+
+   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-121613193-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-121613193-1');
+</script>
+
+</head>
+
+<body class="baseHtml">
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <noscript><h2>Sorry, your browser does not support JavaScript! This site uses AngularJS a technology requiring javascript. Please, Activate Javascript to be able to fully access the site.Thanks ;-).</h2></noscript>
+
+    <div ui-view="header"></div>
+
+    <div ui-view="content"></div>
+
+    <div ui-view="footer"></div>
+
+
+
+
+    <script src="scripts/main-270d3d4ddd.js"></script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClJdyLeLSZUwBMQRbrDM1xtFXYJeZG86A&libraries=places"></script>   
+
+<!--<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    https://maps.googleapis.com/maps/api/js?key=AIzaSyClJdyLeLSZUwBMQRbrDM1xtFXYJeZG86A&libraries=places
+        <script  src="scripts/instanew.js"></script>
+    -->
+
+</body>
+
+</html>
