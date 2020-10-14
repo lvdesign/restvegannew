@@ -5,13 +5,15 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-const MongoClient = require('mongodb').MongoClient;
+var MongoClient = require('mongodb').MongoClient;
 var mongoose = require('mongoose');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 //
 
 var config = require('./config');
+// ?retryWrites=true&w=majority
+var uri = 'mongodb+srv://toto:nesyA0NQxy6XpfHo@cluster0.sovej.mongodb.net/recipeslv'
 /*
 
 const MongoClient = require('mongodb').MongoClient;
@@ -25,8 +27,8 @@ client.connect(err => {
 */
 
 // Connection URL
-mongoose.connect(config.mongoUrl,{useMongoClient: true,});
-
+//mongoose.connect(config.mongoUrl,{useMongoClient: true,});
+var client = new MongoClient(uri, { useNewUrlParser: true });
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function () {
